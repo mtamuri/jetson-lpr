@@ -9,7 +9,7 @@ Tk().withdraw()  # hide tkinter root window
 image_path = filedialog.askopenfilename(title="Select License Plate Image")
 
 if not image_path:
-    raise ValueError("⚠️ No image selected.")
+    raise ValueError("No image selected.")
 model_path = "../models/best.pt"  # path to your trained model
 
 # === Load image ===
@@ -28,7 +28,7 @@ results = model(img)
 detections = results.xyxy[0]  # [x1, y1, x2, y2, conf, class]
 
 if len(detections) == 0:
-    print("❌ No objects detected.")
+    print("No objects detected.")
     exit()
 
 reader = easyocr.Reader(['en'])  # OCR reader
