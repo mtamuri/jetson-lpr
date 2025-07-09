@@ -1,5 +1,4 @@
 # Ignore weights and model artifacts
-*.pt
 *.onnx
 
 # Ignore media files
