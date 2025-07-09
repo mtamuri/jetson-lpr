@@ -1,0 +1,5 @@
+train: /Users/am_mar_mt/Documents/internship cem/License Reading App/archive/images/train
+val: /Users/am_mar_mt/Documents/internship cem/License Reading App/archive/images/val
+
+nc: 1
+names: ['plate']
