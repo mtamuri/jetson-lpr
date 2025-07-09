@@ -11,7 +11,7 @@ image_path = filedialog.askopenfilename(title="Select License Plate Image")
 
 if not image_path:
     raise ValueError("No image selected.")
-model_path = "../models/best.pt"  # path to your trained model
+model_path = "../model/best.pt"  # path to your trained model
 
 # === Load image ===
 img = cv2.imread(image_path)
