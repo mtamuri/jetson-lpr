@@ -10,7 +10,7 @@ image_path = filedialog.askopenfilename(title="Select License Plate Image")
 
 if not image_path:
     raise ValueError("⚠️ No image selected.")
-model_path = "../best.pt"  # path to your trained model
+model_path = "models/best.pt"  # path to your trained model
 
 # === Load image ===
 img = cv2.imread(image_path)
@@ -20,7 +20,7 @@ if img is None:
 H, W, _ = img.shape
 
 # === Load trained YOLOv5 model ===
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='/Users/am_mar_mt/Documents/internship cem/License Reading App/yolov5/runs/train/plate_detector_v14/weights/best.pt', force_reload=True)
+model = torch.hub.load('ultralytics/yolov5', 'custom', path='models/best.pt', force_reload=True)
 model.conf = 0.4  # confidence threshold (optional)
 
 # === Run YOLOv5 detection ===

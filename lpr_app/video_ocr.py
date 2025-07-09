@@ -4,14 +4,18 @@ import easyocr
 from datetime import datetime
 import os
 import csv
+from tkinter import Tk, filedialog
+
 
 # === CONFIG ===
-video_path = "../turkish_plate_video.avi"
-model_path = "../best.pt"
+video_path = filedialog.askopenfilename(title="Select License Plate Video")
+if not video_path:
+    raise ValueError("⚠️ No video selected.")
+model_path = "models/best.pt"
 output_video_path = "output_with_text.avi"
 
 # === Init YOLO model ===
-model = torch.hub.load('ultralytics/yolov5', 'custom', path='/Users/am_mar_mt/Documents/internship cem/License Reading App/yolov5/runs/train/plate_detector_v14/weights/best.pt', force_reload=True)
+model = torch.hub.load('ultralytics/yolov5', 'custom', path=model_path, force_reload=True)
 model.conf = 0.4  # Confidence threshold
 
 reader = easyocr.Reader(['en', 'tr'])
