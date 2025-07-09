@@ -1,0 +1,19 @@
+# Ignore weights and model artifacts
+*.pt
+*.onnx
+
+# Ignore media files
+*.avi
+*.mp4
+*.jpg
+*.png
+
+# Training output
+runs/
+
+# Cache
+__pycache__/
+
+# Datasets
+archive/
+datasets/
