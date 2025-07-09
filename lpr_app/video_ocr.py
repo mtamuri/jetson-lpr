@@ -11,7 +11,7 @@ from tkinter import Tk, filedialog
 video_path = filedialog.askopenfilename(title="Select License Plate Video")
 if not video_path:
     raise ValueError("⚠️ No video selected.")
-model_path = "models/best.pt"
+model_path = "../models/best.pt"
 output_video_path = "output_with_text.avi"
 
 # === Init YOLO model ===
